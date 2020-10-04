@@ -1,4 +1,4 @@
-import {createdStructuredSelector, createStructuredSelector} from 'reselect'
+import { createStructuredSelector} from 'reselect'
 export const NAME = 'counter';
 
 //Action Types
