@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import './index.css';
 import App from './components/App';
@@ -11,9 +11,9 @@ const {store} = getStore();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <a href="/">main</a>
-      <a href="/home">home</a>
-      <a href="/about">about</a>
+      <Link to="/">main</Link>
+      <Link to="/home">home</Link>
+      <Link to="/about">about</Link>
       <hr/>
       <Switch>
         <Route path="/home">
