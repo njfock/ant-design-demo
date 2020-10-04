@@ -1,8 +1,8 @@
 import {createStore} from 'redux'
 
 //Action Types
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
+const INCREMENT = '[Home]/INCREMENT';
+const DECREMENT = '[Home]/DECREMENT';
 
 export const actionTypes = {
     INCREMENT,
