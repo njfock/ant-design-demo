@@ -16,7 +16,7 @@ const Counter = ({counter, counterActions}) => {
                         <Button size="large" icon={<MinusOutlined/>} shape="circle" onClick={counterActions.decrement}/>
                     </Col>
                     <Col md={2}>
-                        <span style={{fontSize:'2rem', fontWeight:'bold'}}>{counter.counter}</span>
+                        <span style={{fontSize:'2rem', fontWeight:'bold'}}>{counter.value}</span>
                     </Col>
                     <Col md={2}>
                         <Button size="large" icon={<PlusOutlined/>} shape="circle" onClick={counterActions.increment}/>

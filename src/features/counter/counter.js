@@ -7,16 +7,17 @@ const DECREMENT = '[counter]/DECREMENT';
 
 //initial state:
 const initialState = {
-    counter: 0
+    value: 0,
+    isCounterLoading: false,
 }
 
 //REDUCER
 export default (state = initialState, action= {}) => {
     switch(action.type){
         case actionTypes.INCREMENT:
-            return {...state, counter: ++state.counter}
+            return {...state, value: ++state.value}
         case actionTypes.DECREMENT:
-            return {...state, counter: --state.counter}
+            return {...state, value: --state.value}
         default:
             return state
     }
