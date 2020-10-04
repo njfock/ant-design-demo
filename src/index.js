@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import './index.css';
 import App from './components/App';
+import Home from './components/Home';
+import Main from './components/Main';
+import About from './components/About';
+import NavBar from './components/NavBar';
 import getStore from './store/getStore';
 import * as serviceWorker from './serviceWorker';
 
@@ -11,20 +15,11 @@ const {store} = getStore();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Link to="/">main</Link>
-      <Link to="/home">home</Link>
-      <Link to="/about">about</Link>
-      <hr/>
+      <NavBar/>
       <Switch>
-        <Route path="/home">
-          Hello home
-        </Route>
-        <Route path="/about">
-          Hello about
-        </Route>
-        <Route path="/">
-          Hello world
-        </Route>
+        <Route path="/home" component={Home}/>
+        <Route path="/about" component={About}/>
+        <Route path="/" component={Main}/>
       </Switch>
       
     </BrowserRouter>
