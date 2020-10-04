@@ -11,6 +11,10 @@ const {store} = getStore();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
+      <a href="/">main</a>
+      <a href="/home">home</a>
+      <a href="/about">about</a>
+      <hr/>
       <Switch>
         <Route path="/home">
           Hello home
