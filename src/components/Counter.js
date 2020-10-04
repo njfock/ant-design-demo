@@ -1,10 +1,14 @@
 import React from 'react';
 import {Row, Col, Card, Button} from 'antd';
 import {MinusOutlined, PlusOutlined} from '@ant-design/icons';
-import {connect} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {actionTypes} from '../redux'
 
-const Counter = ({counter, increment, decrement}) => {
+const Counter = () => {
+    const counter = useSelector( state => state.counter);
+    const dispatch = useDispatch();
+    const increment = () => dispatch({type: actionTypes.INCREMENT})
+    const decrement = () => dispatch({type: actionTypes.DECREMENT})
     return(
         <React.Fragment>
             <Card title='Contador' bordered={false}>
@@ -26,11 +30,5 @@ const Counter = ({counter, increment, decrement}) => {
     )
 }
 
-const mapStateToProps = state => ({counter: state.counter})
 
-const mapDispatchToProps = dispatch => ({
-    increment: () => {dispatch({type: actionTypes.INCREMENT})},
-    decrement: () => {dispatch({type: actionTypes.DECREMENT})}
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default Counter
