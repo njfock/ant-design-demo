@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Switch} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import './index.css';
-import App from './components/App';
+import Counter from './components/Counter';
+import Users from './components/Users';
 import Home from './components/Home';
 import Main from './components/Main';
 import About from './components/About';
-import NavBar from './components/NavBar';
+import AppRoute from './components/App';
 import getStore from './store/getStore';
 import * as serviceWorker from './serviceWorker';
 
@@ -15,13 +16,13 @@ const {store} = getStore();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <NavBar/>
       <Switch>
-        <Route path="/home" component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/" component={Main}/>
+        <AppRoute path={'/about'} component={About}/>
+        <AppRoute path={'/main'} component={Main}/>
+        <AppRoute path={'/users'} component={Users}/>
+        <AppRoute path={'/counter'} component={Counter}/>
+        <AppRoute path={'/'} component={Home}/>
       </Switch>
-      
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
