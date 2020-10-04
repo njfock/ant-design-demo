@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Route} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import './index.css';
 import App from './components/App';
@@ -9,7 +10,11 @@ import * as serviceWorker from './serviceWorker';
 const {store} = getStore();
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <Route path="/">
+        Hello world
+      </Route>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
